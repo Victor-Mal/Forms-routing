@@ -17,7 +17,7 @@ export default function LoginForm(props) {
     >
       {(formikProps) => {
         return (
-          <Form>
+          <Form style={{width: '522px'}}>
             <MyInput type="text" name="email" placeholder="Email address" {...formikProps} />
             <MyInput type="password" name="password" placeholder="Password" {...formikProps} />
           </Form>
