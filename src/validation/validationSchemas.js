@@ -19,4 +19,32 @@ export const LOGIN_SCHEME = yup
       .required(),
   });
 
+export const SIGNUP_SCHEME = yup
+  .object()
+  .required()
+  .shape({
+    firstname: yup
+      .string()
+      .matches(nameRegex, "Not valid")
+      .required("Firstname is required"),
 
+    lastname: yup
+      .string()
+      .matches(nameRegex, "Not valid")
+      .required("Lastname is required"),
+
+      displayname: yup
+      .string()
+      .matches(nameRegex, "Not valid")
+      .required("Display name is required"),
+
+    email: yup.string().email().required(),
+
+    password: yup.string().matches(passwordRegex).required('Password is required'),
+
+    confPassword: yup.string()
+     .oneOf([yup.ref('password'), null], 'Passwords must match'),
+  });
+
+  
+  
