@@ -1,5 +1,5 @@
 import React from "react";
-import {Form, Formik} from "formik";
+import { Form, Formik } from "formik";
 import { LOGIN_SCHEME } from "validation/validationSchemas";
 import MyInput from "../MyInput";
 
@@ -16,10 +16,27 @@ export default function LoginForm(props) {
       validationSchema={LOGIN_SCHEME}
     >
       {(formikProps) => {
+        console.log('Formik props', Formik)
         return (
-          <Form style={{width: '522px'}}>
-            <MyInput type="text" name="email" placeholder="Email address" {...formikProps} />
-            <MyInput type="password" name="password" placeholder="Password" {...formikProps} />
+          <Form style={{ width: "522px", position: "relative" }}>
+            <div style={{ position: "relative" }}>
+              <MyInput
+                type="text"
+                name="email"
+                id="left"
+                placeholder="Email address"
+                {...formikProps}
+              />
+            </div>
+            <div style={{ position: "relative" }}>
+              <MyInput
+                type="password"
+                name="password"
+                id="left"
+                placeholder="Password"
+                {...formikProps}
+              />
+            </div>
           </Form>
         );
       }}

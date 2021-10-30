@@ -40,7 +40,7 @@ function RegisterMenu(props) {
 
       <TurquoiseButton
         title={<h3>Create account</h3>}
-        href={"https://www.squadhelp.com/signup"}
+        type={"submit"}
       />
       <div>
         <p className={styles.terms}>

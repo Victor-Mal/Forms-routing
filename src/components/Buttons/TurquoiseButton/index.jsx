@@ -3,10 +3,10 @@ import classNames from "classnames";
 import styles from "../Buttons.module.sass";
 
 export default function TurquoiseButton(props) {
-  const login = classNames([styles.login], [styles.btn], [styles.linkStyle]);
+  const turButton = classNames([styles.login], [styles.btn], [styles.linkStyle]);
   return (
-    <a className={login} href={props.href}>
+    <button className={turButton} type={props.type}>
       {props.title}
-    </a>
+    </button>
   );
 }

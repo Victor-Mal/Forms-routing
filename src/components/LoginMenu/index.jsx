@@ -25,7 +25,7 @@ function LoginMenu(props) {
             Forgot Password
           </a>
         </div>
-        <TurquoiseButton title={<h3>LOGIN</h3>} href={"https://www.squadhelp.com/forgot_password.php"}/>
+        <TurquoiseButton title={<h3>LOGIN</h3>} type={'submit'}/>
         <SignGoogle title={"Sign in with Google"} />
       </div>
     </div>

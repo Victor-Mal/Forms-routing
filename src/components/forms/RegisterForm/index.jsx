@@ -6,6 +6,8 @@ import styles from "./RegisterForm.module.sass";
 
 const initialValues = {
   firstname: "",
+  lastname: "",
+  displayname: "",
   email: "",
   password: "",
   confPassword: "",
@@ -23,49 +25,68 @@ export default function RegisterForm(props) {
           <Form>
             <div className={styles.regForm}>
               <div className={styles.fildsLength}>
-                <MyInput
-                  placeholder="First name"
-                  type="text"
-                  name="firstname"
-                  {...formikProps}
-                />
-                <MyInput
-                  placeholder="Last name"
-                  type="text"
-                  name="lastname"
-                  {...formikProps}
-                />
-                <MyInput
-                  placeholder="Display name"
-                  type="text"
-                  name="displayname"
-                  {...formikProps}
-                />
+                <div className={styles.inputContainer} >
+                  <MyInput 
+                    placeholder="First name"
+                    type="text"
+                    name="firstname"
+                    id="left"
+                    {...formikProps}
+                  />
+                </div>
+                <div className={styles.inputContainer}>
+                  <MyInput
+                    placeholder="Last name"
+                    type="text"
+                    name="lastname"
+                    id="right"
+                    {...formikProps}
+                  />
+                </div>
               </div>
               <div className={styles.fildsLength}>
-                <MyInput
-                  placeholder="Email Address"
-                  type="text"
-                  name="email"
-                  {...formikProps}
-                />
-                <MyInput
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  {...formikProps}
-                />
-                <MyInput
-                  placeholder="Password Confirmation"
-                  type="password"
-                  name="confPassword"
-                  {...formikProps}
-                />
+                <div className={styles.inputContainer}>
+                  <MyInput
+                    placeholder="Display name"
+                    type="text"
+                    name="displayname"
+                    id="left"
+                    {...formikProps}
+                  />
+                </div>
+                <div className={styles.inputContainer}>
+                  <MyInput
+                    placeholder="Email Address"
+                    type="text"
+                    name="email"
+                    id="right"
+                    {...formikProps}
+                  />
+                </div>
+              </div>
+              <div className={styles.fildsLength}>
+                <div className={styles.inputContainer}>
+                  <MyInput
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    id="left"
+                    {...formikProps}
+                  />
+                </div>
+                <div className={styles.inputContainer}>
+                  <MyInput
+                    placeholder="Password Confirmation"
+                    type="password"
+                    name="confPassword"
+                    id="right"
+                    {...formikProps}
+                  />
+                </div>
               </div>
             </div>
 
             <ErrorMessage name="confPassword" {...formikProps} />
-            
           </Form>
         );
       }}
